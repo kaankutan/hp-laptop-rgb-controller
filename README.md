@@ -1,3 +1,4 @@
+![enter image description here](https://github.com/kaankutan/hp-laptop-rgb-controller/blob/master/assets/screenshot.png?raw=true)
 
 A RGB controller UI application for [hp-omen-linux-module](https://github.com/pelrun/hp-omen-linux-module).
 
