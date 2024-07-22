@@ -1,0 +1,2 @@
+pyqt_color_picker==0.0.20
+PyQt5==5.15.11
