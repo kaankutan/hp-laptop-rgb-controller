@@ -5,7 +5,7 @@ BASE_DIR="/home/$USER/.hp-rgb"
 REPO_URL="https://github.com/kaankutan/hp-laptop-rgb-controller.git"
 VENV_PATH="$BASE_DIR/venv"
 RUN_SCRIPT_PATH="$BASE_DIR/run.sh"
-DESKTOP_ENTRY_PATH="/home/$USER/.local/share/applications/hp_rgb_controller.desktop"
+DESKTOP_ENTRY_PATH="/usr/share/applications/hp_rgb_controller.desktop"
 
 # Create necessary directories
 mkdir -p "$(dirname "$DESKTOP_ENTRY_PATH")"
