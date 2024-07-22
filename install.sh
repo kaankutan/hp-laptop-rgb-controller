@@ -2,7 +2,7 @@
 
 # Define paths
 BASE_DIR="/home/$USER/.hp-rgb"
-REPO_URL="https://github.com/kaankutan/your-repo.git"
+REPO_URL="https://github.com/kaankutan/hp-laptop-rgb-controller.git"
 VENV_PATH="$BASE_DIR/venv"
 RUN_SCRIPT_PATH="$BASE_DIR/run.sh"
 DESKTOP_ENTRY_PATH="/home/$USER/.local/share/applications/hp_rgb_controller.desktop"
