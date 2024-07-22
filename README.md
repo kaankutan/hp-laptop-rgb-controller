@@ -1,4 +1,4 @@
-A RGB controller UI application for hp-omen-linux-module.
+A RGB controller UI application for [hp-omen-linux-module](https://github.com/pelrun/hp-omen-linux-module).
 
 ## Installation
 1. Install hp-wmi kernel module using steps on this repository: hp-omen-linux-module
