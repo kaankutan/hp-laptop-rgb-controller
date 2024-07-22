@@ -60,7 +60,7 @@ class MainWindow(QMainWindow):
         return tray_menu
     
     def initUI(self):
-        self.setWindowTitle("HP Laptop RGB Control")
+        self.setWindowTitle("HP Laptop RGB Controller")
         self.setWindowIcon(QIcon("assets/hp_logo.png"))
 
         # Create and configure the keyboard image label
