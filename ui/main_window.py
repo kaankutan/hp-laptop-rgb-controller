@@ -43,7 +43,7 @@ class MainWindow(QMainWindow):
     def initTrayIcon(self):
         # Create a system tray icon for the application
         self.tray_icon = QSystemTrayIcon(self)
-        self.tray_icon.setIcon(QIcon(os.path.abspath("assets/hp_logo.png")))
+        self.tray_icon.setIcon(QIcon(os.path.join(base_dir, "assets/hp_logo.png")))
         self.tray_icon.setToolTip("HP Laptop RGB Control")
         # Right-clicking will show the tray icon menu
         self.tray_icon.setContextMenu(self.createTrayMenu())
@@ -68,7 +68,7 @@ class MainWindow(QMainWindow):
 
         # Create and configure the keyboard image label
         self.keyboard_image = QLabel(self)
-        self.keyboard_image.setPixmap(QPixmap(os.path.abspath("assets/keyboard.png")))
+        self.keyboard_image.setPixmap(QPixmap(os.path.join(base_dir, "assets/keyboard.png")))
         self.keyboard_image.setStyleSheet(f"background-color: {self.keyboard_thread.current_color}; border-radius: 10px;")
         self.keyboard_image.setScaledContents(True)
         self.keyboard_image.setFixedSize(580, 248)
@@ -94,7 +94,7 @@ class MainWindow(QMainWindow):
         self.color_selector_button = QLabel(self)
         self.color_selector_button.setFixedSize(48, 48)
         self.color_selector_button.setScaledContents(True)
-        self.color_selector_button.setPixmap(QPixmap(os.path.abspath("assets/color_button.png")))
+        self.color_selector_button.setPixmap(QPixmap(os.path.join(base_dir, "assets/color_picker.png")))
         self.color_selector_button.setCursor(Qt.CursorShape.PointingHandCursor)
         self.color_selector_button.mousePressEvent = lambda event: self.color_picker.show()
         self.colors_layout.addWidget(self.color_selector_button)
