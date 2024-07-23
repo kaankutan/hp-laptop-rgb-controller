@@ -15,6 +15,8 @@ from threads import KeyboardThread
 from pyqt_color_picker import ColorPickerWidget
 import os
 
+base_dir = os.path.dirname(os.path.abspath(__file__))
+
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -62,7 +64,7 @@ class MainWindow(QMainWindow):
     
     def initUI(self):
         self.setWindowTitle("HP Laptop RGB Controller")
-        self.setWindowIcon(QIcon(os.path.abspath("assets/hp_logo.png")))
+        self.setWindowIcon(QIcon(os.path.join(base_dir, "assets/hp_logo.png")))
 
         # Create and configure the keyboard image label
         self.keyboard_image = QLabel(self)
@@ -92,7 +94,7 @@ class MainWindow(QMainWindow):
         self.color_selector_button = QLabel(self)
         self.color_selector_button.setFixedSize(48, 48)
         self.color_selector_button.setScaledContents(True)
-        self.color_selector_button.setPixmap(QPixmap(os.path.abspath("assets/color_picker.png")))
+        self.color_selector_button.setPixmap(QPixmap(os.path.abspath("assets/color_button.png")))
         self.color_selector_button.setCursor(Qt.CursorShape.PointingHandCursor)
         self.color_selector_button.mousePressEvent = lambda event: self.color_picker.show()
         self.colors_layout.addWidget(self.color_selector_button)
