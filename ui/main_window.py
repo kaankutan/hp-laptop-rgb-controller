@@ -15,7 +15,11 @@ from threads import KeyboardThread
 from pyqt_color_picker import ColorPickerWidget
 import os
 
-base_dir = os.path.dirname(os.path.abspath(__file__))
+# Get the directory of the current file
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Navigate up to the project root
+project_root = os.path.abspath(os.path.join(current_dir, ".."))
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -43,7 +47,7 @@ class MainWindow(QMainWindow):
     def initTrayIcon(self):
         # Create a system tray icon for the application
         self.tray_icon = QSystemTrayIcon(self)
-        self.tray_icon.setIcon(QIcon(os.path.join(base_dir, "assets/hp_logo.png")))
+        self.tray_icon.setIcon(QIcon(os.path.join(project_root, "assets/hp_logo.png")))
         self.tray_icon.setToolTip("HP Laptop RGB Control")
         # Right-clicking will show the tray icon menu
         self.tray_icon.setContextMenu(self.createTrayMenu())
@@ -64,11 +68,11 @@ class MainWindow(QMainWindow):
     
     def initUI(self):
         self.setWindowTitle("HP Laptop RGB Controller")
-        self.setWindowIcon(QIcon(os.path.join(base_dir, "assets/hp_logo.png")))
+        self.setWindowIcon(QIcon(os.path.join(project_root, "assets/hp_logo.png")))
 
         # Create and configure the keyboard image label
         self.keyboard_image = QLabel(self)
-        self.keyboard_image.setPixmap(QPixmap(os.path.join(base_dir, "assets/keyboard.png")))
+        self.keyboard_image.setPixmap(QPixmap(os.path.join(project_root, "assets/keyboard.png")))
         self.keyboard_image.setStyleSheet(f"background-color: {self.keyboard_thread.current_color}; border-radius: 10px;")
         self.keyboard_image.setScaledContents(True)
         self.keyboard_image.setFixedSize(580, 248)
@@ -94,7 +98,7 @@ class MainWindow(QMainWindow):
         self.color_selector_button = QLabel(self)
         self.color_selector_button.setFixedSize(48, 48)
         self.color_selector_button.setScaledContents(True)
-        self.color_selector_button.setPixmap(QPixmap(os.path.join(base_dir, "assets/color_picker.png")))
+        self.color_selector_button.setPixmap(QPixmap(os.path.join(project_root, "assets/color_button.png")))
         self.color_selector_button.setCursor(Qt.CursorShape.PointingHandCursor)
         self.color_selector_button.mousePressEvent = lambda event: self.color_picker.show()
         self.colors_layout.addWidget(self.color_selector_button)
