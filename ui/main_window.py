@@ -15,13 +15,9 @@ from threads import KeyboardThread
 from pyqt_color_picker import ColorPickerWidget
 import os
 
-# Get the directory of the current file
-current_dir = os.path.dirname(os.path.abspath(__file__))
-
-# Navigate up to the project root
-project_root = os.path.abspath(os.path.join(current_dir, ".."))
-
-print(project_root)
+CURRENT_DIR = os.path.dirname(os.path.realpath(__file__))
+# Now navigate up to the project root
+project_root = os.path.abspath(os.path.join(CURRENT_DIR), "..")
 
 class MainWindow(QMainWindow):
     def __init__(self):

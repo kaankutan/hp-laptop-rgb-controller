@@ -34,7 +34,7 @@ echo '#!/bin/bash
 VENV_PATH="/home/$USER/.hp-rgb/venv"
 SCRIPT_PATH="/home/$USER/.hp-rgb/main.py"
 source "$VENV_PATH/bin/activate"
-python  "$SCRIPT_PATH"' > "$RUN_SCRIPT_PATH"
+python "$SCRIPT_PATH"' > "$RUN_SCRIPT_PATH"
 chmod +x "$RUN_SCRIPT_PATH"
 
 # Create the .desktop entry
