@@ -23,7 +23,7 @@ class KeyboardThread(QThread):
     @current_color.setter
     def current_color(self, value):
         # Request to stop if color changes
-        self._stop_requested = value != self._previous_color
+        self._stop_requested = True
         self._previous_color = self._current_color
         self._current_color = value
 
@@ -49,6 +49,7 @@ class KeyboardThread(QThread):
     def run(self):
         # Main loop for thread execution
         while self._running:
+            self._stop_requested = False
             if self.effect == 'breathing':
                 self.runEffect(self.getBreathingColors)
             elif self.effect == 'spectrum':
