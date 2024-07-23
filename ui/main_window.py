@@ -13,11 +13,9 @@ from PyQt5.QtGui import QPixmap, QIcon
 from PyQt5.QtCore import Qt
 from threads import KeyboardThread
 from pyqt_color_picker import ColorPickerWidget
-import os
+import sys
 
-CURRENT_DIR = os.path.dirname(os.path.realpath(__file__))
-# Now navigate up to the project root
-project_root = os.path.abspath(os.path.join(CURRENT_DIR), "..")
+project_root = sys.argv[1]
 
 class MainWindow(QMainWindow):
     def __init__(self):

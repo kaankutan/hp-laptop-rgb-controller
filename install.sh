@@ -29,12 +29,9 @@ if [ -f "$BASE_DIR/requirements.txt" ]; then
 fi
 
 # Create the shell script
-echo '#!/bin/bash
-
-VENV_PATH="/home/$USER/.hp-rgb/venv"
-SCRIPT_PATH="/home/$USER/.hp-rgb/main.py"
-source "$VENV_PATH/bin/activate"
-python "$SCRIPT_PATH"' > "$RUN_SCRIPT_PATH"
+echo "#!/bin/bash
+source $VENV_PATH/bin/activate
+python $BASE_DIR/main.py $BASE_DIR " > "$RUN_SCRIPT_PATH"
 chmod +x "$RUN_SCRIPT_PATH"
 
 # Create the .desktop entry
