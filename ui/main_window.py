@@ -21,6 +21,8 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 # Navigate up to the project root
 project_root = os.path.abspath(os.path.join(current_dir, ".."))
 
+print(project_root)
+
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
