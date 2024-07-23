@@ -34,14 +34,14 @@ echo '#!/bin/bash
 VENV_PATH="/home/$USER/.hp-rgb/venv"
 SCRIPT_PATH="/home/$USER/.hp-rgb/main.py"
 source "$VENV_PATH/bin/activate"
-python "$SCRIPT_PATH"' > "$RUN_SCRIPT_PATH"
+python  "$SCRIPT_PATH"' > "$RUN_SCRIPT_PATH"
 chmod +x "$RUN_SCRIPT_PATH"
 
 # Create the .desktop entry
 echo "[Desktop Entry]
 Name=HP RGB Controller
 Comment=RGB Controller for HP Laptops
-Exec=pkexec $RUN_SCRIPT_PATH
+Exec=pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY $RUN_SCRIPT_PATH
 Icon=$BASE_DIR/assets/hp_logo.png
 Terminal=false
 Type=Application" > "$DESKTOP_ENTRY_PATH"
