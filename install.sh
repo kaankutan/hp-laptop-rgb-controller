@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# Confirm that the user is running the script as root
-if [ "$EUID" -ne 0 ]; then
-    echo "Please run this script as root"
-    exit
-fi
-
 # Define paths
 BASE_DIR="/home/$USER/.hp-rgb"
 REPO_URL="https://github.com/kaankutan/hp-laptop-rgb-controller.git"
