@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# Ask for sudo permissions
-if [ "$EUID" -ne 0 ]; then
-    echo "Please run this script with sudo permissions."
-    exit
-fi
-
 # Define paths
 BASE_DIR="/home/$USER/.hp-rgb"
 REPO_URL="https://github.com/kaankutan/hp-laptop-rgb-controller.git"
@@ -41,14 +35,14 @@ VENV_PATH="/home/$USER/.hp-rgb/venv"
 SCRIPT_PATH="/home/$USER/.hp-rgb/main.py"
 
 source "$VENV_PATH/bin/activate"
-sudo python "$SCRIPT_PATH"' > "$RUN_SCRIPT_PATH"
+python "$SCRIPT_PATH"' > "$RUN_SCRIPT_PATH"
 chmod +x "$RUN_SCRIPT_PATH"
 
 # Create the .desktop entry
 echo "[Desktop Entry]
 Name=HP RGB Controller
 Comment=RGB Controller for HP Laptops
-Exec=$RUN_SCRIPT_PATH
+Exec=pkexec $RUN_SCRIPT_PATH
 Icon=$BASE_DIR/assets/hp_logo.png
 Terminal=false
 Type=Application" > "$DESKTOP_ENTRY_PATH"
