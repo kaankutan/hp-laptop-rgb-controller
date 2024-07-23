@@ -14,6 +14,7 @@ from PyQt5.QtCore import Qt
 from threads import KeyboardThread
 from pyqt_color_picker import ColorPickerWidget
 import sys
+import os
 
 project_root = sys.argv[1]
 
