@@ -26,6 +26,8 @@ class KeyboardThread(QThread):
         self._stop_requested = True
         self._previous_color = self._current_color
         self._current_color = value
+        if self._effect == 'static':
+            self.setKeyboardColor(value)
 
     @property
     def effect(self):
@@ -54,8 +56,6 @@ class KeyboardThread(QThread):
                 self.runEffect(self.getBreathingColors)
             elif self.effect == 'spectrum':
                 self.runEffect(self.getSpectrumColors)
-            elif self.effect == 'static' and self._current_color != self._previous_color:
-                self.setKeyboardColor(self._current_color)
             else:
                 time.sleep(0.1)
         self.setKeyboardColor(self.current_color)  # Set final color when stopping
